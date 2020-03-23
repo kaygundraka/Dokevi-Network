@@ -5,7 +5,7 @@
 ![language](https://img.shields.io/badge/language-c%2B%2B-green.svg)
 ![platform](https://img.shields.io/badge/platform-windows-brightgreen.svg)
 
-The Dokevi-Network include many utils as network(client/server/packet), structure, os(thread/exception/log), interface.
+The Dokevi-Network includes many utils as network(client/server/packet), structure, os(thread/exception/log), interface.
 This library provides multi-thread iocp based tcp server and independence tcp-client. And then, it helps you to use some utils as structures and interfaces easier. The Dokevi-Network based on windows-platform. Because this project uses powerful-network function likes iocp.
 
 This project include spdlog library. (MIT License Open Source Library)
