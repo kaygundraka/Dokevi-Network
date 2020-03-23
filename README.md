@@ -17,7 +17,7 @@ https://github.com/gabime/spdlog
 + Provide independece abstract network client.
 + Provide some utils as structures and interfaces.
 + Provide tiny and simple c++ network game framework.
-+ Logs, dumps and records make it easy to find server bugs.
++ Logs, dumps and records make it easy to find bugs.
 
 ## Installation
 
