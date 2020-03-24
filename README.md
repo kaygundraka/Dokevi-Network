@@ -13,7 +13,7 @@ This project include spdlog library. (MIT License Open Source Library)
 
 ## Features
 
-+ Provide windows-iocp based tcp server.
++ Provide windows-iocp based tcp server. (React Type Server)
 + Provide independece abstract network client.
 + Provide some utils as structures and interfaces.
 + Provide tiny and simple c++ network game framework.
@@ -21,13 +21,14 @@ This project include spdlog library. (MIT License Open Source Library)
 
 ## Installation
 
-Maybe cmakes.
-> Test text
+Maybe using cmakes.
+> Wait for moment.
   
 ## Documents
 
-Maybe github wiki
-> Test text
+We helps you to learn making network game base using tutorial-documents. Follow tutorial now.
+
+> https://github.com/kaygundraka/Dokevi-Network/wiki/Introduce-Dokevi-Network
   
 ## Release History
 
