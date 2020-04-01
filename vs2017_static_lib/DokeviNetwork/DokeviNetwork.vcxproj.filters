@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Structure">
+      <UniqueIdentifier>{cd8f494f-7576-436d-8eef-2ab6f0bca97b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{c404e8e9-a2a9-47c2-a60d-38c76bd19685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Record">
+      <UniqueIdentifier>{5c392fdd-a7f0-4769-8f42-89e4d648f9cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{af61ef3c-41e0-47cc-8208-aa2f24c60eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ETC">
+      <UniqueIdentifier>{9a17fbf0-b8a7-4958-a72c-39c8ede1f6e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SocketAddress.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPSocket.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="DokeviServer.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkClient.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkUtils.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketInterface.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketSelector.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadManager.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncSection.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ScalablePool.h">
+      <Filter>Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="AtomicStaticQueue.h">
+      <Filter>Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="AtomicStaticPool.h">
+      <Filter>Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="DokeviException.h">
+      <Filter>Record</Filter>
+    </ClInclude>
+    <ClInclude Include="StackTracer.h">
+      <Filter>Record</Filter>
+    </ClInclude>
+    <ClInclude Include="LockStackTracer.h">
+      <Filter>Record</Filter>
+    </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>Record</Filter>
+    </ClInclude>
+    <ClInclude Include="ISingleton.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceFunction.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>ETC</Filter>
+    </ClInclude>
+    <ClInclude Include="RandGenerator.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressLock.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigManager.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DokeviServer.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkClient.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkUtils.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketSelector.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadManager.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncSection.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="ScalablePool.cpp">
+      <Filter>Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="DokeviException.cpp">
+      <Filter>Record</Filter>
+    </ClCompile>
+    <ClCompile Include="StackTracer.cpp">
+      <Filter>Record</Filter>
+    </ClCompile>
+    <ClCompile Include="LockStackTracer.cpp">
+      <Filter>Record</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>Record</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceFunction.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>ETC</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigManager.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
