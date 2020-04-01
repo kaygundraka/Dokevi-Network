@@ -21,8 +21,7 @@ This project include spdlog library. (MIT License Open Source Library)
 
 ## Installation
 
-Maybe using cmakes.
-> Wait for moment.
+This repository include vs-2017 static library project. just, you build the project.
 
 ## Simple Guide
 
