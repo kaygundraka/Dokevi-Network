@@ -42,12 +42,12 @@ Maybe using cmakes.
 class NetworkClient abstract
 {
 protected:
-	TCPSocket* _socket;
+	std::shared_ptr<TCPSocket> _socket;
 
 public:
-	NetworkClient(TCPSocket* inSocket) : _socket(inSocket) {}
+	NetworkClient(std::shared_ptr<TCPSocket> inSocket) : _socket(inSocket) {}
 		
-	const TCPSocket* GetSocket() { return _socket; }
+	const std::shared_ptr<TCPSocket> GetSocket() { return _socket; }
 	~NetworkClient();
 
 	virtual void ConnectedHandler() = 0;
@@ -72,11 +72,11 @@ public:
 ```cpp
 #include <InterfaceFunction.h>
 
-using namespace Dokevi;
+using namespace DokeviNet;
 
 void main()
 {
-    DokeviUtils::InitializeNetwork();
+    InitializeManagers(".\\settings.ini");
 
     // ...
 }
@@ -85,13 +85,13 @@ void main()
  And then, The dokevi-network framework use many managers inside. You should initialize managers.
 It is simple. Just write code below.
 
-> Dokevi::DokeviUtils::IntializeManagers(".\\settings.ini");
+> DokeviNet::IntializeManagers(".\\settings.ini");
 
  The parameter string is server config file (as ini-type file) address. It is used by config manager. If you want to input any options, you should write options in ini file. You can use options in code by config manager easier.
 
  Also, When the server or client program is finished, you must write to below code.
 
-> Dokevi::DokeviUtils::ReleaseMembers();
+> Dokevi::ReleaseMembers();
 
  It release the manager's resources.
 
@@ -104,13 +104,13 @@ using namespace Dokevi;
 
 void main()
 {
-    DokeviUtils::InitializeNetwork();
+    InitializeNetwork();
 
-    DokeviUtils::InitializeManagers(".\\settings.ini");
+    InitializeManagers(".\\settings.ini");
 
     // some codes
 
-    DokeviUtils::ReleaseManagers();
+    ReleaseManagers();
 }
 ```
 
@@ -119,13 +119,13 @@ You should ready to declare connection alloc function seperatly by ports. Look a
 
 ```cpp
 // 1. Declare example alloc function
-void* CreateGameClient(TCPSocket* inSocket) // Must be same function-declare type
+void* CreateGameClient(std::shared_ptr<TCPSocket> inSocket) // Must be same function-declare type
 {
     return new MyCode::GameClient(inSocket); // this class inherit NetworkClient class
 }
 
 // 1-1. In same way, declare alloc function
-void* CreateWebToolClient(TCPSocket* inSocket)
+void* CreateWebToolClient(std::shared_ptr<TCPSocket> inSocket)
 {
     return new MyCode::WebToolClient(inSocket); // this class inherit NetworkClient class
 }
@@ -143,23 +143,21 @@ using namespace Dokevi;
 
 void main()
 {
-    DokeviUtils::InitializeNetwork();
+    InitializeNetwork();
 
-    DokeviUtils::InitializeManagers(".\\settings.ini");
+    InitializeManagers(".\\settings.ini");
 
     DokeviServer server;
 
-    const int iocpWorkerNum = ConfigMgr->GetInt("System"/*section*/, "IOThread"/*value*/);
-    const int gamePort = ConfigMgr->GetInt("System"/*section*/, "GamePort"/*value*/);
-    const int toolPort = ConfigMgr->GetInt("System"/*section*/, "ToolPort"/*value*/);
+    const int iocpWorkerNum = SINGLETON(ConfgManager)->GetInt("System"/*section*/, "IOThread"/*value*/);
+    const int gamePort = SINGLETON(ConfgManager)->GetInt("System"/*section*/, "GamePort"/*value*/);
+    const int toolPort = SINGLETON(ConfgManager)->GetInt("System"/*section*/, "ToolPort"/*value*/);
 
-    EServerRunResult result = server.
-        SetWorkerThead(iocpWorkerNum).
-        SetConnectionInfo(gamePort, &CreateGameClient).
-        SetConnectionInfo(toolPort, &CreateToolClient).
-        Run();
-
-    // result error check ... 
+    server.
+        Init().
+        SetListenPort(gamePort, 10000 /*MAX_CLIENT_SIZE*/, &CreateGameClient).
+        SetListenPort(toolPort, 10 /*MAX_CLIENT_SIZE*/, &CreateToolClient).
+        Run(iocpWorkerNum);
 
     // loop game logic or sleep.
 
