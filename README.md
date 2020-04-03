@@ -6,14 +6,14 @@
 ![platform](https://img.shields.io/badge/platform-windows-brightgreen.svg)
 
 The Dokevi-Network includes many utils like network(client/server/packet), structure, os(thread/exception/log), interface.
-The Dokevi-Network based on windows-platform. Because this project uses powerful-network function like iocp. This library provides multi-thread iocp based tcp server and independence tcp-client. And then, it helps you to use some utils as structures and interfaces easier.
+The Dokevi-Network based on windows-platform. Because this project uses powerful-network function like iocp. This library provides multi-thread iocp based tcp server and independence tcp-client. And then, It helps you to use some utils as structures and interfaces easier.
 
 This project include spdlog library. (MIT License Open Source Library)
 > https://github.com/gabime/spdlog
 
 ## Features
 
-+ Provide windows-iocp based tcp server. (React Type Server)
++ Provide windows-iocp based multi-connections tcp server. (React Type Server)
 + Provide independece abstract network client.
 + Provide some utils as structures and interfaces.
 + Provide tiny and simple c++ network game framework.
@@ -27,15 +27,15 @@ This repository include vs-2017 static library project. just, you build the proj
 
 ### Step 0 : Install library and build project
 
- The Dokevi-Network use iocp tcp interface in windows platform. We provide visual studio project using cmake. If you build the project, you can get header files and static lib files. You have to link library to your project. 
+ The Dokevi-Network use iocp tcp interface in windows platform. If you build the project, you build the dokevi static lib project. you can get header files and static lib files. You have to link library to your project. 
 
 ### Step 1 : How to create connection class?
 
- If you want to server, just you create dokevi-network server instance. But connection as game client is made inherited class in library. You have to make your connection class using abstract connection class.
+ If you want to server, just you create dokevi-network server instance. But connection (as game client) is made inherited class in library. You have to make your connection class using abstract connection class.
 
  Look at the code below.
 
-> This library code is always writed on Dokevi namespace.
+> This library code is always writed on DokeviNet namespace.
 
 ```cpp
 class NetworkClient abstract
@@ -56,9 +56,9 @@ public:
 ```
 
 > You can find member value by '_' prefix keyword. Every member values use '_' keyword.
-> Also, function parameters alway use 'in' prefix keyword.
+> Also, function parameters always use 'in' prefix keyword.
 
- The NetworkClient is declared on NetworkClient header file. This class works like connection. When any client is connected to your server, The network thread create The NetworkClient class instance and call abstract ConnectedHandler function.
+ The NetworkClient is declared on NetworkClient header files. This class works like connection. When any client is connected to your server, The network thread create the NetworkClient class instance and call abstract ConnectedHandler function.
 
  In the same way, DisconnectedHandler called. When your server is received packet, The NetworkClient process packet using your inherited handler.
 
