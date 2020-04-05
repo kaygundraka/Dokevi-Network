@@ -99,7 +99,7 @@ It is simple. Just write code below.
 ```cpp
 #include <InterfaceFunction.h>
 
-using namespace Dokevi;
+using namespace DokeviNet;
 
 void main()
 {
@@ -136,7 +136,7 @@ void* CreateWebToolClient(std::shared_ptr<TCPSocket> inSocket)
 ```cpp
 #include <InterfaceFunction.h>
 
-using namespace Dokevi;
+using namespace DokeviNet;
 
 // declar connection alloc functions
 
