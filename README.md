@@ -14,7 +14,7 @@ This project includes spdlog library. (MIT License Open Source Library)
 ## Features
 
 + Provide windows-iocp based multi-connections tcp server. (React Type Server)
-+ Provide independece abstract network client.
++ Provide independence abstract network client.
 + Provide some utils as structures and interfaces.
 + Provide tiny and simple c++ network game framework.
 + Logs, dumps and records make it easy to find bugs.
