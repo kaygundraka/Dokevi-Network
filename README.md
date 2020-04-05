@@ -8,7 +8,7 @@
 The Dokevi-Network includes many utils like network(client/server/packet), structure, os(thread/exception/log), interface.
 The Dokevi-Network based on windows-platform. Because this project uses powerful-network function like iocp. This library provides multi-thread iocp based tcp server and independence tcp-client. And then, It helps you to use some utils as structures and interfaces easier.
 
-This project include spdlog library. (MIT License Open Source Library)
+This project includes spdlog library. (MIT License Open Source Library)
 > https://github.com/gabime/spdlog
 
 ## Features
@@ -21,13 +21,13 @@ This project include spdlog library. (MIT License Open Source Library)
 
 ## Installation
 
-This repository include vs-2017 static library project. just, you build the project.
+This repository includes vs-2017 static library project. just, you build the project.
 
 ## Simple Guide
 
 ### Step 0 : Install library and build project
 
- The Dokevi-Network use iocp tcp interface in windows platform. If you build the project, you build the dokevi static lib project. you can get header files and static lib files. You have to link library to your project. 
+ The Dokevi-Network uses iocp tcp interface in windows platform. If you build the project, you build the dokevi static lib project. you can get header files and static lib files. You have to link library to your project. 
 
 ### Step 1 : How to create connection class?
 
@@ -56,7 +56,7 @@ public:
 ```
 
 > You can find member value by '_' prefix keyword. Every member values use '_' keyword.
-> Also, function parameters always use 'in' prefix keyword.
+> Also, the function parameters always use 'in' prefix keyword.
 
  The NetworkClient is declared on NetworkClient header files. This class works like connection. When any client is connected to your server, The network thread create the NetworkClient class instance and call abstract ConnectedHandler function.
 
@@ -81,7 +81,7 @@ void main()
 }
 ```
 
- And then, The dokevi-network framework use many managers inside. You should initialize managers.
+ And then, The dokevi-network framework uses many managers inside. You should initialize managers.
 It is simple. Just write code below.
 
 > DokeviNet::IntializeManagers(".\\settings.ini");
@@ -168,9 +168,9 @@ void main()
 
 ### Step 3 : How to work iocp thread in dokevi-server?
 
- The dokevi-server use io completion port inside. The dokevi-server designed proact type frameworks. The server use windows network functions as AcceptEx(), WSASend(), WSARecv() ... 
+ The dokevi-server use io-completion port inside. The dokevi-server designed proact type frameworks. The server use windows network functions as AcceptEx(), WSASend(), WSARecv() ... 
 
- And then, When client requests to access server, the server call the accept handler and allocate client of the right type by ports. Also, When server send packet to client, client allocate packet from atomic-packet pool. The server reuses sockets and packets and uses minimal lock in all parts of the packet sending and receiving. 
+ And then, When client requests to access server, the server call the accept handler and allocate client of the right type by ports. Also, When the server sends packet to client, the client allocates packet from atomic-packet pool. The server reuses sockets and packets and uses minimal lock in all parts of the packet sending and receiving. 
 
  It is so powerful.
 
